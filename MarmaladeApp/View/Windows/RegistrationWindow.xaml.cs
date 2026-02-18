@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarmaladeApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,43 @@ namespace MarmaladeApp.View.Windows
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(LoginTB.Text)||string.IsNullOrEmpty(EmailTB.Text) || string.IsNullOrEmpty(PhoneTB.Text) || string.IsNullOrEmpty(NameTB.Text) || string.IsNullOrEmpty(SurenameTB.Text) || string.IsNullOrEmpty(PatronymicTB.Text)
+                || string.IsNullOrEmpty(PassRepPB.Password) || string.IsNullOrEmpty(PassFstPB.Password))
+            {
+                MessageBox.Show("Введите данные");
+            }
+            else
+            {
+
+                if (App.context.User.Any(u => u.Login == LoginTB.Text || u.Email==EmailTB.Text || u.Phone == PhoneTB.Text) ==false)
+                {
+                    if (PassFstPB.Password == PassRepPB.Password)
+                    {
+                    User userN = new User()
+                    {
+                        Login = LoginTB.Text,
+                        Email = EmailTB.Text,
+                        Password = PassFstPB.Password,
+                        RoleID = 2,
+                        Phone = PhoneTB.Text,
+
+                        Name = NameTB.Text,
+                        Surename = SurenameTB.Text,
+                        Patronymic = PatronymicTB.Text,
+                    };
+
+                        App.context.User.Add(userN);
+                        App.context.SaveChanges();
+                        MessageBox.Show("Аккаун создан успешно","Информация",MessageBoxButton.OK,MessageBoxImage.Information);
+                        AuthorizationWindow authorization = new AuthorizationWindow();
+                        authorization.Show();
+                        this.Close();
+                    }
+                    else { MessageBox.Show("Пароли не совпадают"); }
+
+                }
+            else {MessageBox.Show("Логин или телефон или почта уже зарегестрированны","Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);}
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using MarmaladeApp.View.Pages;
+﻿using MarmaladeApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,23 +11,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MarmaladeApp.View.Windows
+namespace MarmaladeApp.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для TestPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TestPage : Page
     {
-        public MainWindow()
+       List<Marmalade> marmalades = App.context.Marmalade.ToList();
+        public TestPage()
         {
             InitializeComponent();
-        }
-
-        private void Test_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrm.Navigate(new TestPage());
+            InfoIC.ItemsSource = marmalades;
         }
     }
 }

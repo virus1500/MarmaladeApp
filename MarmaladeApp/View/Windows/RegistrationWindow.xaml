@@ -51,7 +51,7 @@
         <TextBox x:Name="NameTB" Grid.Row="7" Grid.Column="3"/>
 
         <TextBlock Text="Фамилия" Grid.Row="9" Grid.Column="1"/>
-        <TextBox x:Name="SrenameTB" Grid.Row="9" Grid.Column="3"/>
+        <TextBox x:Name="SurenameTB" Grid.Row="9" Grid.Column="3"/>
 
         <TextBlock Text="Отчество" Grid.Row="11" Grid.Column="1"/>
         <TextBox x:Name="PatronymicTB" Grid.Row="11" Grid.Column="3"/>
@@ -67,3 +67,4 @@
 
     </Grid>
 </Window>
+
