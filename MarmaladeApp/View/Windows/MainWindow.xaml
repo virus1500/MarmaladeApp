@@ -1,0 +1,65 @@
+﻿<Window x:Class="MarmaladeApp.View.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarmaladeApp.View.Windows"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="330" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <!--Navigation&&NameLogo-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="5" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Name + Ico"/>
+
+            <Grid Grid.Column="1" Grid.Row="3">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Button Content="Мармелад" Grid.Row="0"/>
+                <Button Content="Набор мармелада" Grid.Row="2"/>
+                <Button Content="Поставщики" Grid.Row="4"/>
+                <Button Content="Клиенты" Grid.Row="6"/>
+                <Button Content="Заказы" Grid.Row="8"/>
+                
+            </Grid>
+
+
+
+        </Grid>
+        
+        <!--MainMenu-->
+        <Grid Grid.Column="1">
+            <Frame Name="MainFrm" NavigationUIVisibility="Hidden"/>
+        </Grid>
+        
+    </Grid>
+</Window>
