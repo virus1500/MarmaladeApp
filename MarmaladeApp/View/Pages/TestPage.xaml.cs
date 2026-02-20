@@ -27,5 +27,10 @@ namespace MarmaladeApp.View.Pages
             InitializeComponent();
             InfoIC.ItemsSource = marmalades;
         }
+
+        private void InfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

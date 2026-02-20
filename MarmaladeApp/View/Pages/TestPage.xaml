@@ -27,7 +27,7 @@
                     <Grid>
                         <Border Padding="10" CornerRadius="20" BorderBrush="Black" BorderThickness="1">
                             <StackPanel>
-                                <TextBlock TextWrapping="Wrap" Text="{Binding Name}"/>
+                            <Button Content="{Binding Name}" Name="InfoBtn" Click="InfoBtn_Click"/>
                             <TextBlock Text="{Binding Cost}"/>
                             <TextBlock Text="{Binding Halal}"/>
                             <TextBlock Text="{Binding Supplier.Name}"/>
@@ -46,6 +46,11 @@
                     <Setter Property="Width" Value="200"/>
                 </Style>
             </ItemsControl.ItemContainerStyle>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <EventTrigger/>
+                    </Style.Triggers>
+                </Style>
         </ItemsControl>
 
     </Grid>
