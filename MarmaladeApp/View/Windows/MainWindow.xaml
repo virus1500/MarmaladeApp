@@ -26,7 +26,7 @@
                 <ColumnDefinition Width="5" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="Name + Ico"/>
+            <TextBlock Visibility="Collapsed" Grid.Column="1" Grid.Row="1" Text="Name + Ico"/>
 
             <Grid Grid.Column="1" Grid.Row="3">
 
@@ -46,13 +46,13 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <Button Content="Мармелад" Grid.Row="0"/>
-                <Button Content="Набор мармелада" Grid.Row="2"/>
-                <Button Content="Поставщики" Grid.Row="4"/>
-                <Button Content="Клиенты" Grid.Row="6"/>
-                <Button Content="Заказы" Grid.Row="8"/>
+                <Button x:Name="MarmaladeBtn" Click="MarmaladeBtn_Click" Content="Мармелад" Grid.Row="0"/>
+                <Button x:Name="BoxMarmaladeBtn" Click="BoxMarmaladeBtn_Click" Content="Набор мармелада" Grid.Row="2"/>
+                <Button x:Name="SupplierBtn" Click="SupplierBtn_Click" Content="Поставщики" Grid.Row="4"/>
+                <Button x:Name="ClientsBtn" Click="ClientsBtn_Click" Content="Клиенты" Grid.Row="6"/>
+                <Button x:Name="OrderBtn" Click="OrderBtn_Click" Content="Заказы" Grid.Row="8"/>
                 
-                <Button x:Name="Test" Click="Test_Click" Content="Тест" Grid.Row="10"/>
+                <Button Visibility="Collapsed" x:Name="Test" Click="Test_Click" Content="Тест" Grid.Row="10"/>
                 
             </Grid>
 

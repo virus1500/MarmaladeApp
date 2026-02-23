@@ -1,4 +1,5 @@
-﻿using MarmaladeApp.View.Pages;
+﻿using MarmaladeApp.Model;
+using MarmaladeApp.View.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,33 @@ namespace MarmaladeApp.View.Windows
         private void Test_Click(object sender, RoutedEventArgs e)
         {
             MainFrm.Navigate(new TestPage());
+        }
+
+        private void OrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            MainFrm.Navigate(new TicketPage());
+        }
+
+        private void ClientsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            MainFrm.Navigate(new ClientPage());
+        }
+
+        private void SupplierBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrm.Navigate(new SupplierPage());
+        }
+
+        private void BoxMarmaladeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrm.Navigate(new MarmaladeBoxPage());
+        }
+
+        private void MarmaladeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrm.Navigate(new MarmaladePage());
         }
     }
 }

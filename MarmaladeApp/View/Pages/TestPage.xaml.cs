@@ -1,7 +1,10 @@
 ﻿using MarmaladeApp.Model;
+using MarmaladeApp.View.Windows;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,6 +34,24 @@ namespace MarmaladeApp.View.Pages
         private void InfoBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var marmaladeInfo = sender as Border;
+            if (marmaladeInfo != null)
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    var datacontext = marmaladeInfo.DataContext;
+                    MarmaladeInfoWindow marmaladeInfoWindow = new MarmaladeInfoWindow();
+                    Window mainWindow = Application.Current.MainWindow;
+                    marmaladeInfoWindow.Owner = mainWindow;
+                    marmaladeInfoWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+                    marmaladeInfoWindow.DataContext= datacontext;
+                    marmaladeInfoWindow.ShowDialog();
+                }
+            }
         }
     }
 }

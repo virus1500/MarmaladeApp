@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MarmaladeApp.Model;
+using MarmaladeApp.View.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,29 @@ namespace MarmaladeApp.View.Pages
     /// </summary>
     public partial class MarmaladePage : Page
     {
+        List<Marmalade> marmalades = App.context.Marmalade.ToList();
         public MarmaladePage()
         {
             InitializeComponent();
+            InfoIC.ItemsSource = marmalades;
+        }
+
+        private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var marmaladeInfo = sender as Border;
+            if (marmaladeInfo != null)
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    var datacontext = marmaladeInfo.DataContext;
+                    MarmaladeInfoWindow marmaladeInfoWindow = new MarmaladeInfoWindow();
+                    Window mainWindow = Application.Current.MainWindow;
+                    marmaladeInfoWindow.Owner = mainWindow;
+                    marmaladeInfoWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+                    marmaladeInfoWindow.DataContext = datacontext;
+                    marmaladeInfoWindow.ShowDialog();
+                }
+            }
         }
     }
 }

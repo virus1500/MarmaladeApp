@@ -10,50 +10,44 @@
 
         <ScrollViewer>
         <Grid Background="AliceBlue">
-            
             <ItemsControl Name="InfoIC">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <DataTemplate.Resources>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="FontSize" Value="20"/>
-                        </Style>
-                    </DataTemplate.Resources>
-                    <Grid>
-                        <Border Padding="10" CornerRadius="20" BorderBrush="Black" BorderThickness="1">
-                            <StackPanel>
-                            <Button Content="{Binding Name}" Name="InfoBtn" Click="InfoBtn_Click"/>
-                            <TextBlock Text="{Binding Cost}"/>
-                            <TextBlock Text="{Binding Halal}"/>
-                            <TextBlock Text="{Binding Supplier.Name}"/>
-                            <TextBlock TextWrapping="Wrap" Text="{Binding Compound}"/>
-                        </StackPanel>
-                        </Border>
-                    </Grid>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsControl.ItemContainerStyle>
-                
-                <Style TargetType="ContentPresenter">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DataTemplate.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="20"/>
+                            </Style>
+                        </DataTemplate.Resources>
+                        <Grid>
+                            <Border Padding="10" CornerRadius="20" BorderBrush="Black" BorderThickness="1" x:Name="InfoClick" MouseDown="InfoClick_MouseDown">
 
-                    <Setter Property="Margin" Value="0,0,10,20"/>
-
-                    <Setter Property="Width" Value="200"/>
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-                <Style TargetType="Button">
-                    <Style.Triggers>
-                        <EventTrigger/>
-                    </Style.Triggers>
-                </Style>
-        </ItemsControl>
-
-    </Grid>
+                                <StackPanel>
+                                    <Border BorderThickness="3" CornerRadius="60" BorderBrush="Black"  Height="100" Width="100">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="C:\Users\user\source\repos\MarmaladeApp\MarmaladeApp\Roaming\МармеладПингвины.jpg"/>
+                                        </Border.Background>
+                                    </Border>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Name}"/>
+                                    <TextBlock Text="{Binding Cost}"/>
+                                    <TextBlock Text="{Binding Halal}"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="Margin" Value="0,0,10,20"/>
+                        <Setter Property="Width" Value="200"/>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+            </ItemsControl>
+        </Grid>
     </ScrollViewer>
 </Page>
 

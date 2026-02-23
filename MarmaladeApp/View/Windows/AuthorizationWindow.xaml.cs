@@ -50,7 +50,7 @@ namespace MarmaladeApp.View.Windows
                 }
                 else
                 {
-
+                     
                     MessageBox.Show("Неверные логин и/или пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }

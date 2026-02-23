@@ -62,9 +62,9 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
-          <Property Name="DateOrder" Type="datetime" Nullable="false" />
+          <Property Name="DateOrder" Type="date" Nullable="false" />
           <Property Name="OrderCompleted" Type="bit" Nullable="false" />
-          <Property Name="DateComplete" Type="datetime" />
+          <Property Name="DateComplete" Type="date" />
           <Property Name="CanceledTicket" Type="bit" />
         </EntityType>
         <EntityType Name="TM">
@@ -352,9 +352,9 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="OrderCompleted" Type="Boolean" Nullable="false" />
-          <Property Name="DateComplete" Type="DateTime" Precision="3" />
+          <Property Name="DateComplete" Type="DateTime" Precision="0" />
           <Property Name="CanceledTicket" Type="Boolean" />
           <NavigationProperty Name="TBM" Relationship="Self.FK_TBM_Ticket" FromRole="Ticket" ToRole="TBM" />
           <NavigationProperty Name="User" Relationship="Self.FK_Ticket_User" FromRole="Ticket" ToRole="User" />
