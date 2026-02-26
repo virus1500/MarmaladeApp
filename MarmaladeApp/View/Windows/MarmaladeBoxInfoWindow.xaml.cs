@@ -20,12 +20,16 @@ namespace MarmaladeApp.View.Windows
     /// </summary>
     public partial class MarmaladeBoxInfoWindow : Window
     {
-        private int MrldID;
-        private List<Marmalade> marmalades = new List<Marmalade>();
-        public MarmaladeBoxInfoWindow()
+        
+        //int _marmaladeID;
+        //private List<Marmalade> marmalades = App.context.Marmalade.ToList();
+        //private List<BoxMarmalade> boxMarmalades = App.context.BoxMarmalade.ToList();
+        public MarmaladeBoxInfoWindow(/*int marmaladeID*/)
         {
             InitializeComponent();
-            var MrldInf = marmalades.FirstOrDefault(m => m.id == MrldID);
+            //InfoGrid.DataContext = marmalades.FirstOrDefault(m => m.id == marmaladeID);
+            //MarmaladeName1TB.Text = InfoGrid.DataContext.ToString();
+
         }
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)

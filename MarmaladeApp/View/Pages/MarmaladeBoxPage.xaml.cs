@@ -31,6 +31,7 @@ namespace MarmaladeApp.View.Pages
 
         private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            //int marmaladeID = App.context.Marmalade.;
             var marmaladeInfo = sender as Border;
             if (marmaladeInfo != null)
             {

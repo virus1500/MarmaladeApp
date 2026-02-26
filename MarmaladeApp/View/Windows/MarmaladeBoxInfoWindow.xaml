@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MarmaladeBoxInfoWindow" Height="450" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <Window.Resources>
-        <CollectionViewSource  Source="{Binding Marmalade}" x:Key="MarmaladeBoxinfCVS"/>
+        <local:MarmaladeInfoWindow x:Name="{Binding Marmalade}" x:Key="MarmaladeKey"/>
     </Window.Resources>
     <Border CornerRadius="30" Background="White" BorderBrush="Black" BorderThickness="3" Padding="10">
         <Grid x:Name="InfoGrid">
@@ -45,12 +45,11 @@
                     <ImageBrush ImageSource="/Roaming/МармеладПингвины.jpg"/>
                 </Border.Background>
             </Border>
-            <Border DataContext="{Binding MarmaladeID1}" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" >
-                <TextBlock Text="{Binding Marmalade.Name}" x:Name="MarmaladeName1TB" TextWrapping="Wrap"/>
-            </Border>
-            <TextBlock Text="{Binding Marmalade.Name}" x:Name="MarmaladeName2TB" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Marmalade.Name}" x:Name="MarmaladeName3TB" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Marmalade.Name}" x:Name="MarmaladeName4TB" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding Path=MarmaladeID1}" Background="Aqua" x:Name="MarmaladeName1TB" TextWrapping="Wrap" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
+            <TextBlock Text="{Binding MarmaladeID2}" x:Name="MarmaladeName2TB" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
+            
+            <TextBlock Text="{Binding MarmaladeID3}" x:Name="MarmaladeName3TB" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding MarmaladeID4}" x:Name="MarmaladeName4TB" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
             <TextBlock Text="{Binding Cost}" x:Name="MarmaladeBoxCostTB" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
             <TextBlock Text="{Binding Gramm}" x:Name="MarmaladeGrammTB" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
             <TextBlock Text="{Binding Halal}" x:Name="MarmaladeHalalTB" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
