@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:MarmaladeApp.View.Windows"
         mc:Ignorable="d"
         Title="MarmaladeBoxInfoWindow" Height="450" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    <Window.Resources>
-        <local:MarmaladeInfoWindow x:Name="{Binding Marmalade}" x:Key="MarmaladeKey"/>
-    </Window.Resources>
     <Border CornerRadius="30" Background="White" BorderBrush="Black" BorderThickness="3" Padding="10">
         <Grid x:Name="InfoGrid">
             <Grid.RowDefinitions>
@@ -45,7 +42,7 @@
                     <ImageBrush ImageSource="/Roaming/МармеладПингвины.jpg"/>
                 </Border.Background>
             </Border>
-            <TextBlock Text="{Binding Path=MarmaladeID1}" Background="Aqua" x:Name="MarmaladeName1TB" TextWrapping="Wrap" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
+            <TextBlock  Background="Aqua" x:Name="MarmaladeName1TB" TextWrapping="Wrap" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
             <TextBlock Text="{Binding MarmaladeID2}" x:Name="MarmaladeName2TB" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
             
             <TextBlock Text="{Binding MarmaladeID3}" x:Name="MarmaladeName3TB" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" TextWrapping="Wrap"/>

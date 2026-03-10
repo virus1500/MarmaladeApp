@@ -1,6 +1,7 @@
 ﻿using MarmaladeApp.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,6 @@ namespace MarmaladeApp.View.Windows
         public AuthorizationWindow()
         {
             InitializeComponent();
-
         }
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
@@ -35,16 +35,17 @@ namespace MarmaladeApp.View.Windows
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(LoginTB.Text) || string.IsNullOrEmpty(PassPB.ToString()))
+            if (string.IsNullOrEmpty(LoginTB.Text) || string.IsNullOrEmpty(PassPB.Password))
             {
                 MessageBox.Show("Введите логин и/или пароль", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
+                var LoginCheck = App.context.User.FirstOrDefault(user => user.Login == LoginTB.Text && user.Password == PassPB.Password);
 
-                if (App.context.User.FirstOrDefault(user => user.Login == LoginTB.Text && user.Password == PassPB.Password)!=null)
+                if (LoginCheck!=null)
                 {
-                    MainWindow mainWindow = new MainWindow();
+                    MainWindow mainWindow = new MainWindow(LoginCheck);
                     mainWindow.Show();
                     this.Close();
                 }

@@ -21,9 +21,12 @@ namespace MarmaladeApp.View.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private User thisuser;
+        public MainWindow(User user)
         {
             InitializeComponent();
+            thisuser = user;
+            AdminCheckTB.DataContext = user;
         }
 
         private void Test_Click(object sender, RoutedEventArgs e)

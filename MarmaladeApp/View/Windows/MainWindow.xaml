@@ -26,7 +26,7 @@
                 <ColumnDefinition Width="5" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Visibility="Collapsed" Grid.Column="1" Grid.Row="1" Text="Name + Ico"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Name + Ico"/>
 
             <Grid Grid.Column="1" Grid.Row="3">
 
@@ -51,9 +51,10 @@
                 <Button x:Name="SupplierBtn" Click="SupplierBtn_Click" Content="Поставщики" Grid.Row="4"/>
                 <Button x:Name="ClientsBtn" Click="ClientsBtn_Click" Content="Клиенты" Grid.Row="6"/>
                 <Button x:Name="OrderBtn" Click="OrderBtn_Click" Content="Заказы" Grid.Row="8"/>
-                
-                <Button Visibility="Collapsed" x:Name="Test" Click="Test_Click" Content="Тест" Grid.Row="10"/>
-                
+
+                <Button x:Name="Test" Click="Test_Click" Content="Тест" Grid.Row="10"/>
+                <TextBlock Grid.Row="12" x:Name="AdminCheckTB" Text="{Binding Login}" FontSize="30" TextWrapping="Wrap"/>
+
             </Grid>
 
 

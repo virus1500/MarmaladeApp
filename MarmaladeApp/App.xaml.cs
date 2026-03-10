@@ -15,5 +15,7 @@ namespace MarmaladeApp
     public partial class App : Application
     {
         public static Gogolev_marmaladeEntities context = new Gogolev_marmaladeEntities();
+        public static Marmalade marmalade = new Marmalade();
+        public static User user = new User();
     }
 }
