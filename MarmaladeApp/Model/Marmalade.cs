@@ -28,7 +28,7 @@ namespace MarmaladeApp.Model
         public string Name { get; set; }
         public decimal Cost { get; set; }
         public bool Halal { get; set; }
-        public string EnergyValue100gKilojoleOrCalories { get; set; }
+        public int EnergyValue100gKilojoleOrCalories { get; set; }
         public decimal Gramm { get; set; }
         public string Compound { get; set; }
         public byte[] Photo { get; set; }

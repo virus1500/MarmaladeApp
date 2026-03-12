@@ -11,23 +11,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MarmaladeApp.View.Windows
+namespace MarmaladeApp.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MarmaladeInfoWindow.xaml
+    /// Логика взаимодействия для AccPage.xaml
     /// </summary>
-    public partial class MarmaladeInfoWindow : Window
+    public partial class AccPage : Page
     {
-        public MarmaladeInfoWindow()
+        public AccPage(User user)
         {
             InitializeComponent();
-        }
-
-        private void CloseBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            LoginTB.Text = user.Login;
+            EmailTB.Text = user.Email;
+            PhoneTB.Text = user.Phone;
+            NameTB.Text = user.Name;
+            SurenameTB.Text = user.Surename;
+            PatronymicTB.Text = user.Patronymic;
         }
     }
 }

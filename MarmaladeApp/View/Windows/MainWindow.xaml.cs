@@ -26,7 +26,15 @@ namespace MarmaladeApp.View.Windows
         {
             InitializeComponent();
             thisuser = user;
-            AdminCheckTB.DataContext = user;
+            AccBtn.DataContext = user;
+            AccBtn.Content = user.Login +" "+ user.Role.Name;
+
+            if (user.Role.id != 1)
+            {
+                ClientsBtn.Visibility = Visibility.Collapsed;
+                SupplierBtn.Visibility = Visibility.Collapsed;
+                OrderBtn.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void Test_Click(object sender, RoutedEventArgs e)
@@ -59,6 +67,11 @@ namespace MarmaladeApp.View.Windows
         private void MarmaladeBtn_Click(object sender, RoutedEventArgs e)
         {
             MainFrm.Navigate(new MarmaladePage());
+        }
+
+        private void AccBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrm.Navigate(new AccPage(thisuser));
         }
     }
 }

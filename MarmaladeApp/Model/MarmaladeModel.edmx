@@ -25,7 +25,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Cost" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="Halal" Type="bit" Nullable="false" />
-          <Property Name="EnergyValue100gKilojoleOrCalories" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="EnergyValue100gKilojoleOrCalories" Type="int" Nullable="false" />
           <Property Name="Gramm" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="Compound" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Photo" Type="varbinary(max)" />
@@ -305,7 +305,7 @@
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Cost" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="Halal" Type="Boolean" Nullable="false" />
-          <Property Name="EnergyValue100gKilojoleOrCalories" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EnergyValue100gKilojoleOrCalories" Type="Int32" Nullable="false" />
           <Property Name="Gramm" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="Compound" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />

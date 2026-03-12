@@ -31,29 +31,25 @@
             <Grid Grid.Column="1" Grid.Row="3">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="5" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="5" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="5" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="5" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="5" />
-                    <RowDefinition Height="50" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="5" />
                     <RowDefinition Height="1*" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="5" />
                 </Grid.RowDefinitions>
 
-                <Button x:Name="MarmaladeBtn" Click="MarmaladeBtn_Click" Content="Мармелад" Grid.Row="0"/>
-                <Button x:Name="BoxMarmaladeBtn" Click="BoxMarmaladeBtn_Click" Content="Набор мармелада" Grid.Row="2"/>
-                <Button x:Name="SupplierBtn" Click="SupplierBtn_Click" Content="Поставщики" Grid.Row="4"/>
-                <Button x:Name="ClientsBtn" Click="ClientsBtn_Click" Content="Клиенты" Grid.Row="6"/>
-                <Button x:Name="OrderBtn" Click="OrderBtn_Click" Content="Заказы" Grid.Row="8"/>
+                <StackPanel>
+                    <Button Margin="0,0,0,5" Height="50" x:Name="MarmaladeBtn" Click="MarmaladeBtn_Click" Content="Мармелад" />
+                    <Button Margin="0,0,0,5" Height="50" x:Name="BoxMarmaladeBtn" Click="BoxMarmaladeBtn_Click" Content="Набор мармелада"/>
+                    <Button Margin="0,0,0,5" Height="50" x:Name="SupplierBtn" Click="SupplierBtn_Click" Content="Поставщики"/>
+                    <Button Margin="0,0,0,5" Height="50" x:Name="ClientsBtn" Click="ClientsBtn_Click" Content="Клиенты"/>
+                    <Button Margin="0,0,0,5" Height="50" x:Name="OrderBtn" Click="OrderBtn_Click" Content="Заказы"/>
 
-                <Button x:Name="Test" Click="Test_Click" Content="Тест" Grid.Row="10"/>
-                <TextBlock Grid.Row="12" x:Name="AdminCheckTB" Text="{Binding Login}" FontSize="30" TextWrapping="Wrap"/>
+                    <Button Margin="0,0,0,5" Height="50" x:Name="Test" Click="Test_Click" Content="Тест"/>
+                </StackPanel>
+
+
+                <Button Grid.Row="3" Content="qwe" Name="AccBtn" Click="AccBtn_Click"/>
 
             </Grid>
 

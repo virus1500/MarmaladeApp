@@ -31,18 +31,18 @@ namespace MarmaladeApp.View.Pages
 
         private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //int marmaladeID = App.context.Marmalade.;
             var marmaladeInfo = sender as Border;
             if (marmaladeInfo != null)
             {
                 if (e.ChangedButton == MouseButton.Left)
                 {
                     var datacontext = marmaladeInfo.DataContext;
-                    MarmaladeBoxInfoWindow marmaladeBoxInfoWindow = new MarmaladeBoxInfoWindow();
+
+                    var marmaladeBoxInfoWindow = new MarmaladeBoxInfoWindow();
+                    marmaladeBoxInfoWindow.DataContext = datacontext;
                     Window mainWindow = Application.Current.MainWindow;
                     marmaladeBoxInfoWindow.Owner = mainWindow;
                     marmaladeBoxInfoWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-                    marmaladeBoxInfoWindow.DataContext = datacontext;
                     marmaladeBoxInfoWindow.ShowDialog();
                 }
             }

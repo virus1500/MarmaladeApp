@@ -17,5 +17,6 @@ namespace MarmaladeApp
         public static Gogolev_marmaladeEntities context = new Gogolev_marmaladeEntities();
         public static Marmalade marmalade = new Marmalade();
         public static User user = new User();
+        public static BoxMarmalade boxMarmalade = new BoxMarmalade();
     }
 }

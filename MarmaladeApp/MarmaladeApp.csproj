@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppData\BoxMarmaladeClass.cs" />
     <Compile Include="Model\BoxMarmalade.cs">
       <DependentUpon>MarmaladeModel.tt</DependentUpon>
     </Compile>
@@ -105,6 +106,9 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>MarmaladeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\AccPage.xaml.cs">
+      <DependentUpon>AccPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\ClientPage.xaml.cs">
       <DependentUpon>ClientPage.xaml</DependentUpon>
     </Compile>
@@ -125,6 +129,9 @@
     </Compile>
     <Compile Include="View\Windows\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\InfoMarmaladeForBoxMarmaladeWindow.xaml.cs">
+      <DependentUpon>InfoMarmaladeForBoxMarmaladeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -174,6 +181,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\Pages\AccPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\ClientPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,6 +213,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Windows\InfoMarmaladeForBoxMarmaladeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,9 +234,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppData\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model\MarmaladeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
