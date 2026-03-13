@@ -1,0 +1,66 @@
+﻿<Window x:Class="MarmaladeApp.View.Windows.AddBoxMarmaladeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarmaladeApp.View.Windows"
+        mc:Ignorable="d"
+        Title="AddBoxMarmaladeWindow" Height="450" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Border CornerRadius="30" Background="White" BorderBrush="Black" BorderThickness="3" Padding="10">
+        <Grid x:Name="InfoGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <ComboBox SelectionChanged="NameFstCMB_SelectionChanged" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" x:Name="NameFstCMB"/>
+            <TextBlock Text="Первый мармелад:" Grid.Row="2"/>
+
+            <ComboBox SelectionChanged="NameSecCMB_SelectionChanged"  Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="1" x:Name="NameSecCMB"/>
+            <TextBlock Text="Второй мармелад:" Grid.Row="4"/>
+
+            <ComboBox SelectionChanged="NameThirdCMB_SelectionChanged"  Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="1" x:Name="NameThirdCMB"/>
+            <TextBlock Text="Третий мармелад:" Grid.Row="6"/>
+
+            <ComboBox SelectionChanged="NameFourthCMB_SelectionChanged"  Grid.Row="8" Grid.ColumnSpan="2" Grid.Column="1" x:Name="NameFourthCMB"/>
+            <TextBlock Text="Четвёртый мармелад:" Grid.Row="8"/>
+
+            <TextBox Grid.Row="10" Grid.ColumnSpan="2" Grid.Column="1" x:Name="NameTB"/>
+            <TextBlock Text="Название:" TextWrapping="Wrap" Grid.Row="10"/>
+
+            <TextBlock Grid.Row="12" Grid.ColumnSpan="2" Grid.Column="1" x:Name="CostTBl"/>
+            <TextBlock Text="Стоимость:" TextWrapping="Wrap" Grid.Row="12"/>
+
+            <TextBlock Grid.Row="14" Grid.ColumnSpan="2" Grid.Column="1" x:Name="GrammTBl"/>
+            <TextBlock Text="Грамм:" TextWrapping="Wrap" Grid.Row="14"/>
+
+            <TextBlock Grid.Row="16" Grid.ColumnSpan="2" Grid.Column="1" x:Name="EnergyTBl"/>
+            <TextBlock Text="Каллорийность:" TextWrapping="Wrap" Grid.Row="16"/>
+
+            <Button Content="Сохранить" Grid.Row="18" x:Name="SaveBtn" Click="SaveBtn_Click"/>
+            <Button Content="Закрыть" Grid.Row="18" Grid.Column="2" x:Name="CloseBtn" Click="CloseBtn_Click"/>
+        </Grid>
+    </Border>
+</Window>

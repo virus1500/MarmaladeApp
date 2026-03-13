@@ -23,10 +23,14 @@ namespace MarmaladeApp.View.Pages
     public partial class MarmaladeBoxPage : Page
     {
         List<BoxMarmalade> marmalades = App.context.BoxMarmalade.ToList();
-        public MarmaladeBoxPage()
+        public MarmaladeBoxPage(User user)
         {
             InitializeComponent();
             InfoIC.ItemsSource = marmalades;
+            if (user.Role.id==1)
+            {
+                AddBtn.Visibility = Visibility.Visible;
+            }
         }
 
         private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
@@ -46,6 +50,25 @@ namespace MarmaladeApp.View.Pages
                     marmaladeBoxInfoWindow.ShowDialog();
                 }
             }
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddBoxMarmaladeWindow addBoxMarmaladeWindow = new AddBoxMarmaladeWindow();
+            Window mainWindow = Application.Current.MainWindow;
+            addBoxMarmaladeWindow.Owner = mainWindow;
+            addBoxMarmaladeWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            addBoxMarmaladeWindow.ShowDialog();
+        }
+
+        private void FiltrCMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            InfoIC.ItemsSource = marmalades.Where(u => u.Name.ToLower().Contains(SearchTB.Text.ToLower()));
         }
     }
 }

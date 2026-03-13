@@ -18,5 +18,6 @@ namespace MarmaladeApp
         public static Marmalade marmalade = new Marmalade();
         public static User user = new User();
         public static BoxMarmalade boxMarmalade = new BoxMarmalade();
+        public static Supplier supplier = new Supplier();
     }
 }

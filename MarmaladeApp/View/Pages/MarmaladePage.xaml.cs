@@ -23,10 +23,16 @@ namespace MarmaladeApp.View.Pages
     public partial class MarmaladePage : Page
     {
         List<Marmalade> marmalades = App.context.Marmalade.ToList();
-        public MarmaladePage()
+        public MarmaladePage(User user)
         {
             InitializeComponent();
             InfoIC.ItemsSource = marmalades;
+
+            FiltrCMB.Items.Insert(0,"Нет");
+            FiltrCMB.Items.Insert(1,"Халяль");
+            FiltrCMB.Items.Insert(2,"Не халяль");
+            FiltrCMB.SelectedIndex = 0;
+            if (user.Role.id==1) { AddBtn.Visibility = Visibility.Visible; }
         }
 
         private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
@@ -45,6 +51,39 @@ namespace MarmaladeApp.View.Pages
                     marmaladeInfoWindow.ShowDialog();
                 }
             }
+        }
+
+        private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            InfoIC.ItemsSource = marmalades.Where(u => u.Name.ToLower().Contains(SearchTB.Text.ToLower()));
+        }
+
+        private void FiltrCMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FiltrCMB.SelectedIndex == 0)
+            {
+                InfoIC.ItemsSource = marmalades;
+                //SearchTB.Text = SearchTB.Text;
+            }
+            if (FiltrCMB.SelectedIndex == 1)
+            {
+                InfoIC.ItemsSource = App.context.Marmalade.Where(u=>u.Halal == true).ToList();
+                //SearchTB.Text = SearchTB.Text;
+            }
+            if (FiltrCMB.SelectedIndex == 2)
+            {
+                InfoIC.ItemsSource = App.context.Marmalade.Where(u => u.Halal == false).ToList();
+                //SearchTB.Text = SearchTB.Text;
+            }
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddMarmaladeWindow addMarmaladeWindow = new AddMarmaladeWindow();
+            Window mainWindow = Application.Current.MainWindow;
+            addMarmaladeWindow.Owner = mainWindow;
+            addMarmaladeWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            addMarmaladeWindow.ShowDialog();
         }
     }
 }

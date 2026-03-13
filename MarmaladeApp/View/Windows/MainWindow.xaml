@@ -59,7 +59,7 @@
         
         <!--MainMenu-->
         <Grid Grid.Column="1">
-            <Frame Name="MainFrm"/>
+            <Frame Name="MainFrm" NavigationUIVisibility="Hidden"/>
         </Grid>
         
     </Grid>

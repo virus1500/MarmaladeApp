@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppData\BoxAddClass.cs" />
     <Compile Include="AppData\BoxMarmaladeClass.cs" />
     <Compile Include="Model\BoxMarmalade.cs">
       <DependentUpon>MarmaladeModel.tt</DependentUpon>
@@ -126,6 +127,12 @@
     </Compile>
     <Compile Include="View\Pages\TicketPage.xaml.cs">
       <DependentUpon>TicketPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\AddBoxMarmaladeWindow.xaml.cs">
+      <DependentUpon>AddBoxMarmaladeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\AddMarmaladeWindow.xaml.cs">
+      <DependentUpon>AddMarmaladeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
@@ -206,6 +213,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\TicketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\AddBoxMarmaladeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\AddMarmaladeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

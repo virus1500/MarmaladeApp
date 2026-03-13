@@ -61,12 +61,12 @@ namespace MarmaladeApp.View.Windows
 
         private void BoxMarmaladeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new MarmaladeBoxPage());
+            MainFrm.Navigate(new MarmaladeBoxPage(thisuser));
         }
 
         private void MarmaladeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new MarmaladePage());
+            MainFrm.Navigate(new MarmaladePage(thisuser));
         }
 
         private void AccBtn_Click(object sender, RoutedEventArgs e)
