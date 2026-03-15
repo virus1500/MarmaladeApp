@@ -11,7 +11,8 @@ namespace MarmaladeApp.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Supplier
     {
         public Supplier()
@@ -26,5 +27,7 @@ namespace MarmaladeApp.Model
         public string Country { get; set; }
     
         public virtual ICollection<Marmalade> Marmalade { get; set; }
+
+        public string MarmaladesNames => string.Join(", ", Marmalade.Select(m => m.Name));
     }
 }

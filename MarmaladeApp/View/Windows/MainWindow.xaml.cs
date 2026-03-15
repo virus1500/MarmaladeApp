@@ -1,7 +1,9 @@
-﻿using MarmaladeApp.Model;
+﻿using MarmaladeApp.AppData;
+using MarmaladeApp.Model;
 using MarmaladeApp.View.Pages;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,20 +23,22 @@ namespace MarmaladeApp.View.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
-        private User thisuser;
-        public MainWindow(User user)
+        
+
+        //private User thisuser;
+        public MainWindow()
         {
             InitializeComponent();
-            thisuser = user;
-            AccBtn.DataContext = user;
-            AccBtn.Content = user.Login +" "+ user.Role.Name;
+            //thisuser = user;
+            //AccBtn.DataContext = user;
+            //AccBtn.Content = user.Login +" "+ user.Role.Name;
 
-            if (user.Role.id != 1)
-            {
-                ClientsBtn.Visibility = Visibility.Collapsed;
-                SupplierBtn.Visibility = Visibility.Collapsed;
-                OrderBtn.Visibility = Visibility.Collapsed;
-            }
+            //if (user.Role.id != 1)
+            //{
+            //    ClientsBtn.Visibility = Visibility.Collapsed;
+            //    SupplierBtn.Visibility = Visibility.Collapsed;
+            //    OrderBtn.Visibility = Visibility.Collapsed;
+            //}
         }
 
         private void Test_Click(object sender, RoutedEventArgs e)
@@ -61,17 +65,22 @@ namespace MarmaladeApp.View.Windows
 
         private void BoxMarmaladeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new MarmaladeBoxPage(thisuser));
+            MainFrm.Navigate(new MarmaladeBoxPage());
         }
 
         private void MarmaladeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new MarmaladePage(thisuser));
+            MainFrm.Navigate(new MarmaladePage());
         }
 
         private void AccBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new AccPage(thisuser));
+            MainFrm.Navigate(new AccPage());
+        }
+
+        private void TicketBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrm.Navigate(new OrderPage());
         }
     }
 }

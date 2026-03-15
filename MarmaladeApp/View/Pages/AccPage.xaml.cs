@@ -21,28 +21,28 @@ namespace MarmaladeApp.View.Pages
     /// </summary>
     public partial class AccPage : Page
     {
-        private User thisuser;
-        public AccPage(User user)
+        //private User thisuser;
+        public AccPage()
         {
             InitializeComponent();
-            thisuser = user;
+            //thisuser = user;
 
-            LoginTB.Text = user.Login;
-            EmailTB.Text = user.Email;
-            PhoneTB.Text = user.Phone;
-            NameTB.Text = user.Name;
-            SurenameTB.Text = user.Surename;
-            PatronymicTB.Text = user.Patronymic;
+            //LoginTB.Text = user.Login;
+            //EmailTB.Text = user.Email;
+            //PhoneTB.Text = user.Phone;
+            //NameTB.Text = user.Name;
+            //SurenameTB.Text = user.Surename;
+            //PatronymicTB.Text = user.Patronymic;
 
-            LoginTBx.Text = user.Login;
-            EmailTBx.Text = user.Email;
-            PhoneTBx.Text = user.Phone;
-            NameTBx.Text = user.Name;
-            SurenameTBx.Text = user.Surename;
-            PatronymicTBx.Text = user.Patronymic;
+            //LoginTBx.Text = user.Login;
+            //EmailTBx.Text = user.Email;
+            //PhoneTBx.Text = user.Phone;
+            //NameTBx.Text = user.Name;
+            //SurenameTBx.Text = user.Surename;
+            //PatronymicTBx.Text = user.Patronymic;
 
-            PassPB.Password = user.Password;
-            RepPassPB.Password = user.Password;
+            //PassPB.Password = user.Password;
+            //RepPassPB.Password = user.Password;
             
             PassTBl.Text = new string('*', PassPB.Password.Length);
 
@@ -86,63 +86,63 @@ namespace MarmaladeApp.View.Pages
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(LoginTBx.Text)|| string.IsNullOrEmpty(EmailTBx.Text)|| string.IsNullOrEmpty(PhoneTBx.Text)|| string.IsNullOrEmpty(NameTBx.Text)|| string.IsNullOrEmpty(SurenameTBx.Text)|| string.IsNullOrEmpty(PatronymicTBx.Text)|| string.IsNullOrEmpty(PassPB.Password) || string.IsNullOrEmpty(RepPassPB.Password))
-            {
-                MessageBox.Show("Введите данные");
-            }
-            else
-            {
-                if (PassPB.Password!=RepPassPB.Password)
-                {
-                    MessageBox.Show("Пароли не совпадают");
-                }
-                else
-                {
-                    string login = thisuser.Login;
-                    bool loginChange = login == LoginTBx.Text;
-                    if (loginChange == false)
-                    {
-                        if (App.context.User.Any(u => u.Login == LoginTBx.Text) == true)
-                        {
-                            MessageBox.Show("Логин или телефон или почта уже зарегестрированны", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                        else
-                        {
-                            string email = thisuser.Email;
-                            bool emailChange = email == LoginTBx.Text;
-                            if (emailChange==false)
-                            {
-                                if (App.context.User.Any(u => u.Email == EmailTBx.Text) == true)
-                                {
-                                    MessageBox.Show("Почта уже зарегестрированн", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                                }
-                                else
-                                {
-                                    string phone = thisuser.Phone;
-                                    bool phoneChange = phone == LoginTBx.Text;
-                                    if (phoneChange==false)
-                                    {
-                                        if (App.context.User.Any(u => u.Phone == PhoneTBx.Text) == true)
-                                        {
-                                            MessageBox.Show("Телефон уже зарегестрированн", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                                        }
-                                    }
-                                }
-                            }
-                        }
+            //if (string.IsNullOrEmpty(LoginTBx.Text)|| string.IsNullOrEmpty(EmailTBx.Text)|| string.IsNullOrEmpty(PhoneTBx.Text)|| string.IsNullOrEmpty(NameTBx.Text)|| string.IsNullOrEmpty(SurenameTBx.Text)|| string.IsNullOrEmpty(PatronymicTBx.Text)|| string.IsNullOrEmpty(PassPB.Password) || string.IsNullOrEmpty(RepPassPB.Password))
+            //{
+            //    MessageBox.Show("Введите данные");
+            //}
+            //else
+            //{
+            //    if (PassPB.Password!=RepPassPB.Password)
+            //    {
+            //        MessageBox.Show("Пароли не совпадают");
+            //    }
+            //    else
+            //    {
+            //        string login = thisuser.Login;
+            //        bool loginChange = login == LoginTBx.Text;
+            //        if (loginChange == false)
+            //        {
+            //            if (App.context.User.Any(u => u.Login == LoginTBx.Text) == true)
+            //            {
+            //                MessageBox.Show("Логин или телефон или почта уже зарегестрированны", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            //            }
+            //            else
+            //            {
+            //                string email = thisuser.Email;
+            //                bool emailChange = email == LoginTBx.Text;
+            //                if (emailChange==false)
+            //                {
+            //                    if (App.context.User.Any(u => u.Email == EmailTBx.Text) == true)
+            //                    {
+            //                        MessageBox.Show("Почта уже зарегестрированн", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            //                    }
+            //                    else
+            //                    {
+            //                        string phone = thisuser.Phone;
+            //                        bool phoneChange = phone == LoginTBx.Text;
+            //                        if (phoneChange==false)
+            //                        {
+            //                            if (App.context.User.Any(u => u.Phone == PhoneTBx.Text) == true)
+            //                            {
+            //                                MessageBox.Show("Телефон уже зарегестрированн", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            //                            }
+            //                        }
+            //                    }
+            //                }
+            //            }
 
-                    }
-                    else
-                    {
-                        MessageBox.Show(thisuser.Login);
-                    }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show(thisuser.Login);
+            //        }
 
                 }
                 
             }
         }
-    }
-}
+    
+
 //LoginTBx.Visibility = Visibility.Collapsed;
 //EmailTBx.Visibility = Visibility.Collapsed;
 //PhoneTBx.Visibility = Visibility.Collapsed;

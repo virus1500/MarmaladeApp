@@ -24,8 +24,8 @@
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
                 <TextBox x:Name="SearchTB" TextChanged="SearchTB_TextChanged"/>
-                <ComboBox Grid.Column="5" x:Name="FiltrCMB" SelectionChanged="FiltrCMB_SelectionChanged"/>
                 <Button Visibility="Collapsed" Grid.Column="2" Content="Добавить" x:Name="AddBtn" Click="AddBtn_Click"/>
+                <ComboBox Visibility="Collapsed" Grid.Column="5" x:Name="FiltrCMB" SelectionChanged="FiltrCMB_SelectionChanged"/>
             </Grid>
             <ScrollViewer Grid.Row="3">
             <Grid Background="AliceBlue">
@@ -52,6 +52,8 @@
                                             </Border.Background>
                                         </Border>
                                         <TextBlock TextWrapping="Wrap" Text="{Binding Name}"/>
+                                        <TextBlock TextWrapping="Wrap" x:Name="HalalTBl"/>
+                                        <TextBlock TextWrapping="Wrap" x:Name="CostTBl"/>
                                     </StackPanel>
                                 </Border>
                             </Grid>

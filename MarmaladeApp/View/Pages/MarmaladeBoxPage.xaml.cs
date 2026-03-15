@@ -23,14 +23,22 @@ namespace MarmaladeApp.View.Pages
     public partial class MarmaladeBoxPage : Page
     {
         List<BoxMarmalade> marmalades = App.context.BoxMarmalade.ToList();
-        public MarmaladeBoxPage(User user)
+        public MarmaladeBoxPage()
         {
             InitializeComponent();
             InfoIC.ItemsSource = marmalades;
-            if (user.Role.id==1)
-            {
-                AddBtn.Visibility = Visibility.Visible;
-            }
+
+            FiltrCMB.Items.Insert(0, "Нет");
+            FiltrCMB.Items.Insert(1, "Халяль");
+            FiltrCMB.Items.Insert(2, "Не халяль");
+            FiltrCMB.SelectedIndex = 0;
+
+
+
+            //if (user.Role.id==1)
+            //{
+            //    AddBtn.Visibility = Visibility.Visible;
+            //}
         }
 
         private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
@@ -40,7 +48,7 @@ namespace MarmaladeApp.View.Pages
             {
                 if (e.ChangedButton == MouseButton.Left)
                 {
-                    var datacontext = marmaladeInfo.DataContext;
+                    var datacontext = marmaladeInfo.DataContext as BoxMarmalade;
 
                     var marmaladeBoxInfoWindow = new MarmaladeBoxInfoWindow();
                     marmaladeBoxInfoWindow.DataContext = datacontext;
@@ -63,7 +71,21 @@ namespace MarmaladeApp.View.Pages
 
         private void FiltrCMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            //if (FiltrCMB.SelectedIndex == 0)
+            //{
+            //    InfoIC.ItemsSource = marmalades;
+            //    //SearchTB.Text = SearchTB.Text;
+            //}
+            //if (FiltrCMB.SelectedIndex == 1)
+            //{
+            //    InfoIC.ItemsSource = App.context.Marmalade.Where(u => u.Halal == true).ToList();
+            //    //SearchTB.Text = SearchTB.Text;
+            //}
+            //if (FiltrCMB.SelectedIndex == 2)
+            //{
+            //    InfoIC.ItemsSource = App.context.Marmalade.Where(u => u.Halal == false).ToList();
+            //    //SearchTB.Text = SearchTB.Text;
+            //}
         }
 
         private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)

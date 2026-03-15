@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarmaladeApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,16 @@ namespace MarmaladeApp.View.Pages
     /// </summary>
     public partial class ClientPage : Page
     {
+        List<User> Users = App.context.User.ToList();
         public ClientPage()
         {
             InitializeComponent();
+            InfoDG.ItemsSource = Users.Where(u=>u.RoleID != 1);
+        }
+
+        private void SerachTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            InfoDG.ItemsSource = Users.Where(u => u.Name.ToLower().Contains(SerachTB.Text.ToLower()) || u.Surename.ToLower().Contains(SerachTB.Text.ToLower()) || u.Patronymic.ToLower().Contains(SerachTB.Text.ToLower()) || u.Email.ToLower().Contains(SerachTB.Text.ToLower()) || u.Phone.ToLower().Contains(SerachTB.Text.ToLower()));
         }
     }
 }

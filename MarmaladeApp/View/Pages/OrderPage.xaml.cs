@@ -1,6 +1,8 @@
-﻿using MarmaladeApp.Model;
+﻿using MarmaladeApp.AppData;
+using MarmaladeApp.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,20 +19,28 @@ using System.Windows.Shapes;
 namespace MarmaladeApp.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для TicketPage.xaml
+    /// Логика взаимодействия для OrderPage.xaml
     /// </summary>
-    public partial class TicketPage : Page
+    public partial class OrderPage : Page
     {
-        List<Ticket> tickets = App.context.Ticket.ToList();
-        public TicketPage()
+        public OrderPage()
         {
             InitializeComponent();
-            InfoDG.ItemsSource = tickets;
         }
 
-        private void SerachTB_TextChanged(object sender, TextChangedEventArgs e)
+        private void CreateTicketBtn_Click(object sender, RoutedEventArgs e)
         {
-            InfoDG.ItemsSource = tickets.Where(u => u.User.Login.ToLower().Contains(SerachTB.Text.ToLower()));
+
+        }
+
+        private void ClearTicketBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelItemBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

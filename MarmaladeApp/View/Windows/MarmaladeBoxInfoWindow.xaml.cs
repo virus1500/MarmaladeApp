@@ -139,5 +139,13 @@ namespace MarmaladeApp.View.Windows
             //this.Hide();
         }
 
+        private void BuyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string name = NameBoxTB.Text;
+            decimal cost = decimal.Parse(MarmaladeBoxCostTB.Text);
+
+            // Добавляем в корзину
+            ((MainWindow)Application.Current.MainWindow).AddToCart(name, cost);
+        }
     }
 }

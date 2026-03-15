@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarmaladeApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,16 @@ namespace MarmaladeApp.View.Pages
     /// </summary>
     public partial class SupplierPage : Page
     {
+        List<Supplier> suppliers = App.context.Supplier.ToList();
         public SupplierPage()
         {
             InitializeComponent();
+            InfoDG.ItemsSource = suppliers;
+        }
+
+        private void SerachTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            InfoDG.ItemsSource = suppliers.Where(u => u.Name.ToLower().Contains(SerachTB.Text.ToLower()) || u.Email.ToLower().Contains(SerachTB.Text.ToLower())|| u.Phone.ToLower().Contains(SerachTB.Text.ToLower())|| u.Country.ToLower().Contains(SerachTB.Text.ToLower()));
         }
     }
 }

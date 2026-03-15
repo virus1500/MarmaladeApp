@@ -66,8 +66,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppData\BoxAddClass.cs" />
     <Compile Include="AppData\BoxMarmaladeClass.cs" />
+    <Compile Include="AppData\CartItem.cs" />
+    <Compile Include="AppData\MainViewModel.cs" />
+    <Compile Include="AppData\OrderClass.cs" />
     <Compile Include="Model\BoxMarmalade.cs">
       <DependentUpon>MarmaladeModel.tt</DependentUpon>
     </Compile>
@@ -118,6 +120,9 @@
     </Compile>
     <Compile Include="View\Pages\MarmaladePage.xaml.cs">
       <DependentUpon>MarmaladePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\OrderPage.xaml.cs">
+      <DependentUpon>OrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\SupplierPage.xaml.cs">
       <DependentUpon>SupplierPage.xaml</DependentUpon>
@@ -201,6 +206,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\MarmaladePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\OrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

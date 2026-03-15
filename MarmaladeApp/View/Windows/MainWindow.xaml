@@ -11,7 +11,7 @@
             <ColumnDefinition Width="330" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <!--Navigation&&NameLogo-->
+       
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="5" />
@@ -26,7 +26,7 @@
                 <ColumnDefinition Width="5" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="Name + Ico"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Мармеладный дом" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
 
             <Grid Grid.Column="1" Grid.Row="3">
 
@@ -44,12 +44,13 @@
                     <Button Margin="0,0,0,5" Height="50" x:Name="SupplierBtn" Click="SupplierBtn_Click" Content="Поставщики"/>
                     <Button Margin="0,0,0,5" Height="50" x:Name="ClientsBtn" Click="ClientsBtn_Click" Content="Клиенты"/>
                     <Button Margin="0,0,0,5" Height="50" x:Name="OrderBtn" Click="OrderBtn_Click" Content="Заказы"/>
+                    <Button Margin="0,0,0,5" Height="50" x:Name="TicketBtn" Click="TicketBtn_Click" Content="Корзина"/>
 
                     <Button Margin="0,0,0,5" Height="50" x:Name="Test" Click="Test_Click" Content="Тест"/>
                 </StackPanel>
 
 
-                <Button Grid.Row="3" Content="qwe" Name="AccBtn" Click="AccBtn_Click"/>
+                <Button Grid.Row="3" Name="AccBtn" Click="AccBtn_Click"/>
 
             </Grid>
 

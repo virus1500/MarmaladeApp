@@ -26,6 +26,7 @@
             <TextBox x:Name="SearchTB" TextChanged="SearchTB_TextChanged"/>
             <ComboBox Grid.Column="5" x:Name="FiltrCMB" SelectionChanged="FiltrCMB_SelectionChanged"/>
             <Button Visibility="Collapsed" Grid.Column="2" Content="Добавить" x:Name="AddBtn" Click="AddBtn_Click"/>
+            <Button Visibility="Collapsed" Grid.Column="2" Content="Корзина" x:Name="BuyBtn" Click="BuyBtn_Click"/>
         </Grid>
         
         
@@ -44,9 +45,8 @@
                                     <Setter Property="FontSize" Value="20"/>
                                 </Style>
                             </DataTemplate.Resources>
-                            <Grid>
+                            <Grid x:Name="GridInfoControl">
                                 <Border Padding="10" CornerRadius="20" BorderBrush="Black" BorderThickness="1" x:Name="InfoClick" MouseDown="InfoClick_MouseDown">
-
                                     <StackPanel>
                                         <Border BorderThickness="3" CornerRadius="60" BorderBrush="Black"  Height="100" Width="100">
                                             <Border.Background>
@@ -56,6 +56,9 @@
                                         <TextBlock TextWrapping="Wrap" Text="{Binding Name}"/>
                                         <TextBlock Text="{Binding Cost}"/>
                                         <TextBlock Text="{Binding Halal}"/>
+                                        
+                                        <Button Height="50" Content="Купить" x:Name="BuyBtn" Click="BuyBtn_Click"/>
+                                        <Button Height="50" Content="Инфо" x:Name="InfoBtn" Click="InfoBtn_Click"/>
                                     </StackPanel>
                                 </Border>
                             </Grid>
