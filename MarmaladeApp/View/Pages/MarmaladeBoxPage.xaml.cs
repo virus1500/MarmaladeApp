@@ -23,7 +23,7 @@ namespace MarmaladeApp.View.Pages
     public partial class MarmaladeBoxPage : Page
     {
         List<BoxMarmalade> marmalades = App.context.BoxMarmalade.ToList();
-        public MarmaladeBoxPage()
+        public MarmaladeBoxPage(User user)
         {
             InitializeComponent();
             InfoIC.ItemsSource = marmalades;
@@ -35,10 +35,7 @@ namespace MarmaladeApp.View.Pages
 
 
 
-            //if (user.Role.id==1)
-            //{
-            //    AddBtn.Visibility = Visibility.Visible;
-            //}
+            if (user.Role.id==1){ AddBtn.Visibility = Visibility.Visible;}
         }
 
         private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
@@ -86,6 +83,22 @@ namespace MarmaladeApp.View.Pages
             //    InfoIC.ItemsSource = App.context.Marmalade.Where(u => u.Halal == false).ToList();
             //    //SearchTB.Text = SearchTB.Text;
             //}
+            //if (FiltrCMB.SelectedItem == null) return;
+
+            //var filteredList = allMarmalades; // твой исходный список мармелада
+
+            //switch (FiltrCMB.SelectedIndex)
+            //{
+            //    case 1: // Халяль
+            //        filteredList = allMarmalades.Where(m => m.Halal).ToList();
+            //        break;
+            //    case 2: // Не халяль
+            //        filteredList = allMarmalades.Where(m => !m.Halal).ToList();
+            //        break;
+            //        // case 0 — Нет фильтра, показываем всё
+            //}
+
+            //InfoIC.ItemsSource = filteredList;
         }
 
         private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)

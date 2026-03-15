@@ -5,41 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarmaladeApp.View.Windows"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="720" Width="1280" WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Окно авторизации" Height="720" Width="1280" WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Margin="20">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,350" Text="Мармеладный дом" FontSize="20"/>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="5" />
-            <ColumnDefinition Width="300" />
-        </Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="5" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="5" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="5" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="5" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="5" />
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="5" />
+            </Grid.RowDefinitions>
 
-        <TextBlock Text="Логин" Grid.Row="0" Grid.Column="0"/>
-        <TextBox x:Name="LoginTB" Grid.Row="0" Grid.Column="3"/>
+            <TextBlock Text="Логин" Grid.Row="0" Grid.Column="0"/>
+            <TextBox x:Name="LoginTB" Grid.Row="0" Grid.Column="3"/>
         
-        <TextBlock Text="Пароль" Grid.Row="2"/>
-        <PasswordBox x:Name="PassPB" Grid.Row="2" Grid.Column="3"/>
+            <TextBlock Text="Пароль" Grid.Row="2"/>
+            <PasswordBox x:Name="PassPB" Grid.Row="2" Grid.Column="3"/>
 
-        <CheckBox Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4" Content="Запомнить аккаунт" x:Name="SaveAccChB"/>
+            <CheckBox Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4" Content="Запомнить аккаунт" x:Name="SaveAccChB"/>
 
-        <Button Click="LoginBtn_Click" x:Name="LoginBtn" Grid.Row="6" Grid.ColumnSpan="3" Content="Войти"/>
+            <Button Click="LoginBtn_Click" x:Name="LoginBtn" Grid.Row="6" Grid.ColumnSpan="3" Content="Войти"/>
         
-        <Button Click="RegBtn_Click" x:Name="RegBtn" Grid.Row="8" Grid.ColumnSpan="3" Content="Регистрация"/>
-        </Grid>
+            <Button Click="RegBtn_Click" x:Name="RegBtn" Grid.Row="8" Grid.ColumnSpan="3" Content="Регистрация"/>
+            </Grid>
 
     </Grid>
 </Window>

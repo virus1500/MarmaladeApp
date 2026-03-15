@@ -25,20 +25,24 @@ namespace MarmaladeApp.View.Windows
     {
         
 
-        //private User thisuser;
-        public MainWindow()
+        private User thisuser;
+        public MainWindow(User user)
         {
             InitializeComponent();
-            //thisuser = user;
+            thisuser = user;
             //AccBtn.DataContext = user;
             //AccBtn.Content = user.Login +" "+ user.Role.Name;
 
-            //if (user.Role.id != 1)
-            //{
-            //    ClientsBtn.Visibility = Visibility.Collapsed;
-            //    SupplierBtn.Visibility = Visibility.Collapsed;
-            //    OrderBtn.Visibility = Visibility.Collapsed;
-            //}
+            if (user.Role.id != 1)
+            {
+                ClientsBtn.Visibility = Visibility.Collapsed;
+                SupplierBtn.Visibility = Visibility.Collapsed;
+                OrderBtn.Visibility = Visibility.Collapsed;
+            }
+            if (user.Role.id ==1)
+            {
+                OrderBtn.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void Test_Click(object sender, RoutedEventArgs e)
@@ -65,22 +69,22 @@ namespace MarmaladeApp.View.Windows
 
         private void BoxMarmaladeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new MarmaladeBoxPage());
+            MainFrm.Navigate(new MarmaladeBoxPage(thisuser));
         }
 
         private void MarmaladeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new MarmaladePage());
+            MainFrm.Navigate(new MarmaladePage(thisuser));
         }
 
         private void AccBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new AccPage());
+            MainFrm.Navigate(new AccPage(thisuser));
         }
 
         private void TicketBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrm.Navigate(new OrderPage());
+            MainFrm.Navigate(new OrderPage(thisuser));
         }
     }
 }

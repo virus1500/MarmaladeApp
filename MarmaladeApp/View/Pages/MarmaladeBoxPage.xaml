@@ -4,10 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MarmaladeApp.View.Pages"
+      xmlns:appData="clr-namespace:MarmaladeApp.AppData"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MarmaladeBoxPage">
-
+    <Page.Resources>
+        <appData:BoolToHalalConverter x:Key="BoolToHalalConverter"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
@@ -52,8 +55,8 @@
                                             </Border.Background>
                                         </Border>
                                         <TextBlock TextWrapping="Wrap" Text="{Binding Name}"/>
-                                        <TextBlock TextWrapping="Wrap" x:Name="HalalTBl"/>
-                                        <TextBlock TextWrapping="Wrap" x:Name="CostTBl"/>
+                                        <TextBlock Text="{Binding Halal, Converter={StaticResource BoolToHalalConverter}}"/>
+                                        <TextBlock Text="{Binding Cost, StringFormat={}{0} ₽}"/>
                                     </StackPanel>
                                 </Border>
                             </Grid>

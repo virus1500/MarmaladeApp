@@ -141,11 +141,45 @@ namespace MarmaladeApp.View.Windows
 
         private void BuyBtn_Click(object sender, RoutedEventArgs e)
         {
-            string name = NameBoxTB.Text;
-            decimal cost = decimal.Parse(MarmaladeBoxCostTB.Text);
+            BoxMarmalade box = this.DataContext as BoxMarmalade;
 
-            // Добавляем в корзину
-            ((MainWindow)Application.Current.MainWindow).AddToCart(name, cost);
+            if (box != null)
+            {
+                // Собираем названия всех мармеладов в коробке
+                List<string> names = new List<string>();
+                decimal totalCost = 0;
+
+                if (box.Marmalade != null)
+                {
+                    names.Add(box.Marmalade.Name);
+                    totalCost += box.Marmalade.Cost;
+                }
+                if (box.Marmalade1 != null)
+                {
+                    names.Add(box.Marmalade1.Name);
+                    totalCost += box.Marmalade1.Cost;
+                }
+                if (box.Marmalade2 != null)
+                {
+                    names.Add(box.Marmalade2.Name);
+                    totalCost += box.Marmalade2.Cost;
+                }
+                if (box.Marmalade3 != null)
+                {
+                    names.Add(box.Marmalade3.Name);
+                    totalCost += box.Marmalade3.Cost;
+                }
+
+                string boxName = box.Name;
+
+                CartService.Items.Add(new CartItem
+                {
+                    Name = boxName,
+                    Cost = totalCost
+                });
+
+                MessageBox.Show($"Коробка с мармеладом ({boxName}) добавлена в корзину!");
+            }
         }
     }
 }

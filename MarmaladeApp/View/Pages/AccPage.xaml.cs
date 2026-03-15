@@ -21,29 +21,29 @@ namespace MarmaladeApp.View.Pages
     /// </summary>
     public partial class AccPage : Page
     {
-        //private User thisuser;
-        public AccPage()
+        private User thisuser;
+        public AccPage(User user)
         {
             InitializeComponent();
-            //thisuser = user;
+            thisuser = user;
 
-            //LoginTB.Text = user.Login;
-            //EmailTB.Text = user.Email;
-            //PhoneTB.Text = user.Phone;
-            //NameTB.Text = user.Name;
-            //SurenameTB.Text = user.Surename;
-            //PatronymicTB.Text = user.Patronymic;
+            LoginTB.Text = $" Логин: {user.Login}";
+            EmailTB.Text = $" Почта: {user.Email}";
+            PhoneTB.Text = $" Телефон: {user.Phone}";
+            NameTB.Text = $" Имя: {user.Name}";
+            SurenameTB.Text = $" Фамилия: {user.Surename}";
+            PatronymicTB.Text = $" Отчество: {user.Patronymic}";
 
-            //LoginTBx.Text = user.Login;
-            //EmailTBx.Text = user.Email;
-            //PhoneTBx.Text = user.Phone;
-            //NameTBx.Text = user.Name;
-            //SurenameTBx.Text = user.Surename;
-            //PatronymicTBx.Text = user.Patronymic;
+            LoginTBx.Text = user.Login;
+            EmailTBx.Text = user.Email;
+            PhoneTBx.Text = user.Phone;
+            NameTBx.Text = user.Name;
+            SurenameTBx.Text = user.Surename;
+            PatronymicTBx.Text = user.Patronymic;
 
-            //PassPB.Password = user.Password;
-            //RepPassPB.Password = user.Password;
-            
+            PassPB.Password = user.Password;
+            RepPassPB.Password = user.Password;
+
             PassTBl.Text = new string('*', PassPB.Password.Length);
 
             PassPB.Visibility = Visibility.Collapsed;
@@ -141,7 +141,7 @@ namespace MarmaladeApp.View.Pages
                 
             }
         }
-    
+
 
 //LoginTBx.Visibility = Visibility.Collapsed;
 //EmailTBx.Visibility = Visibility.Collapsed;

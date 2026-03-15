@@ -24,21 +24,34 @@ namespace MarmaladeApp.View.Pages
     public partial class MarmaladePage : Page
     {
         List<Marmalade> marmalades = App.context.Marmalade.ToList();
-        public MarmaladePage()
+        public MarmaladePage(User user)
         {
             InitializeComponent();
             InfoIC.ItemsSource = marmalades;
 
-            FiltrCMB.Items.Insert(0,"Нет");
+            FiltrCMB.Items.Insert(0,"Все");
             FiltrCMB.Items.Insert(1,"Халяль");
             FiltrCMB.Items.Insert(2,"Не халяль");
             FiltrCMB.SelectedIndex = 0;
-            //if (user.Role.id==1) { AddBtn.Visibility = Visibility.Visible; }
+            if (user.Role.id==1) { AddBtn.Visibility = Visibility.Visible; }
         }
 
         private void InfoClick_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
+            var marmaladeInfo = sender as Border;
+            if (marmaladeInfo != null)
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    var datacontext = marmaladeInfo.DataContext;
+                    MarmaladeInfoWindow marmaladeInfoWindow = new MarmaladeInfoWindow();
+                    Window mainWindow = Application.Current.MainWindow;
+                    marmaladeInfoWindow.Owner = mainWindow;
+                    marmaladeInfoWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+                    marmaladeInfoWindow.DataContext = datacontext;
+                    marmaladeInfoWindow.ShowDialog();
+                }
+            }
         }
 
         private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)

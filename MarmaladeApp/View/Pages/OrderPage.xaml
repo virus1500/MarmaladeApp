@@ -14,22 +14,16 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="5"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
 
-        <ItemsControl >
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Margin="5">
-                        <TextBlock Text="{Binding }" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding }" FontSize="14"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-
-        <TextBlock Text="{Binding }" FontWeight="Bold" FontSize="16"/>
-
+        <DataGrid x:Name="InfoDG" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Содержимое заказа" Binding="{Binding Name}" x:Name="ItemsDGC"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Row="1" Text="Сумма" x:Name="SumTBl"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -37,10 +31,11 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="5" />
                 <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="16" Content="Заказать" Grid.Column="0" Name="CreateTicketBtn" Click="CreateTicketBtn_Click"/>
-            <Button Grid.Row="16" Content="Удалить" Grid.Column="2" Name="DelItemBtn" Click="DelItemBtn_Click"/>
-            <Button Grid.Row="16" Content="Очистить" Grid.Column="4" Name="ClearTicketBtn" Click="ClearTicketBtn_Click"/>
+            <Button Content="Заказать" Grid.Column="0" Name="CreateTicketBtn" Click="CreateTicketBtn_Click"/>
+            <Button Content="Удалить" Grid.Column="2" Name="DelItemBtn" Click="DelItemBtn_Click"/>
+            <Button Content="Очистить" Grid.Column="4" Name="ClearTicketBtn" Click="ClearTicketBtn_Click"/>
         </Grid>
     </Grid>
 </Page>

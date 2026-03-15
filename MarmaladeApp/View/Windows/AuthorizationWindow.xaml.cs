@@ -45,7 +45,7 @@ namespace MarmaladeApp.View.Windows
 
                 if (LoginCheck!=null)
                 {
-                    MainWindow mainWindow = new MainWindow();
+                    MainWindow mainWindow = new MainWindow(LoginCheck);
                     mainWindow.Show();
                     this.Close();
                 }

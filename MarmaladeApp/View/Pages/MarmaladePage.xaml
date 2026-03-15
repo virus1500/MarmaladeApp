@@ -54,11 +54,6 @@
                                             </Border.Background>
                                         </Border>
                                         <TextBlock TextWrapping="Wrap" Text="{Binding Name}"/>
-                                        <TextBlock Text="{Binding Cost}"/>
-                                        <TextBlock Text="{Binding Halal}"/>
-                                        
-                                        <Button Height="50" Content="Купить" x:Name="BuyBtn" Click="BuyBtn_Click"/>
-                                        <Button Height="50" Content="Инфо" x:Name="InfoBtn" Click="InfoBtn_Click"/>
                                     </StackPanel>
                                 </Border>
                             </Grid>

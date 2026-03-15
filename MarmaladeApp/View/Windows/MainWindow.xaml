@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarmaladeApp.View.Windows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
+        Title="Главное окно" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="330" />
@@ -46,11 +46,11 @@
                     <Button Margin="0,0,0,5" Height="50" x:Name="OrderBtn" Click="OrderBtn_Click" Content="Заказы"/>
                     <Button Margin="0,0,0,5" Height="50" x:Name="TicketBtn" Click="TicketBtn_Click" Content="Корзина"/>
 
-                    <Button Margin="0,0,0,5" Height="50" x:Name="Test" Click="Test_Click" Content="Тест"/>
+                    <Button Visibility="Collapsed" Margin="0,0,0,5" Height="50" x:Name="Test" Click="Test_Click" Content="Тест"/>
                 </StackPanel>
 
 
-                <Button Grid.Row="3" Name="AccBtn" Click="AccBtn_Click"/>
+                <Button Grid.Row="3" Content="Профиль" Name="AccBtn" Click="AccBtn_Click"/>
 
             </Grid>
 

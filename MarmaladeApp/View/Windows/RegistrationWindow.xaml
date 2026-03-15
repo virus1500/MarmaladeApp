@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarmaladeApp.View.Windows"
         mc:Ignorable="d"
-        Title="RegistrationWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="720" Width="1280">
+        Title="Окно регистрации" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="720" Width="1280">
     <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,550" Text="Мармеладный дом" FontSize="20"/>
+
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <Grid.ColumnDefinitions>

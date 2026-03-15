@@ -24,8 +24,7 @@ namespace MarmaladeApp.View.Windows
     /// </summary>
     public partial class MarmaladeInfoWindow : Window
     {
-        public MainViewModel ViewModel { get; set; }
-
+        
         public MarmaladeInfoWindow()
         {
             InitializeComponent();
@@ -38,25 +37,17 @@ namespace MarmaladeApp.View.Windows
 
         private void BuyBtn_Click(object sender, RoutedEventArgs e)
         {
-            //MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-            //if (mainWindow != null)
-            //{
-            //    var datacontext = this.DataContext as Marmalade;
-
-            //    string name = MarmaladeNameTB.Text;
-            //    decimal cost = datacontext.Cost;
-
-            //    mainWindow.AddToCart(name, cost);
-            //    MessageBox.Show(name, cost.ToString());
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Главное окно не найдено или имеет неправильный тип.");
-            //}
-            // В обработчике "BuyBtn_Click" или аналогичном
-
-            
-            //    ((MainWindow)Application.Current.MainWindow).AddToCart(name, cost);
+            Marmalade marmalade = this.DataContext as Marmalade;
+            if (marmalade != null)
+            {
+                CartService.Items.Add(new CartItem
+                {
+                    MarmaladeID = marmalade.id,
+                    Name = marmalade.Name,
+                    Cost = marmalade.Cost
+                });
+                MessageBox.Show($"{marmalade.Name} добавлен в корзину");
+            }
         }
     }
 }
