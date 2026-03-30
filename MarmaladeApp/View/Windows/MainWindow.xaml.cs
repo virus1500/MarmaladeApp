@@ -41,7 +41,7 @@ namespace MarmaladeApp.View.Windows
             }
             if (user.Role.id ==1)
             {
-                OrderBtn.Visibility = Visibility.Collapsed;
+                TicketBtn.Visibility = Visibility.Collapsed;
             }
         }
 

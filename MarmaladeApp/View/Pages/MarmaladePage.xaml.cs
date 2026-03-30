@@ -23,10 +23,18 @@ namespace MarmaladeApp.View.Pages
     /// </summary>
     public partial class MarmaladePage : Page
     {
+        public bool IsAdmin { get; set; }
+
+
+
         List<Marmalade> marmalades = App.context.Marmalade.ToList();
         public MarmaladePage(User user)
         {
             InitializeComponent();
+
+            IsAdmin = user.Role.id == 1;
+            DataContext = this; 
+
             InfoIC.ItemsSource = marmalades;
 
             FiltrCMB.Items.Insert(0,"Все");
@@ -107,6 +115,22 @@ namespace MarmaladeApp.View.Pages
                     marmaladeInfoWindow.ShowDialog();
                 
             }
+        }
+
+        private void DelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Marmalade item = btn.CommandParameter as Marmalade;
+
+            if (item == null) return;
+
+            App.context.Marmalade.Remove(item);
+            App.context.SaveChanges();
+
+            marmalades.Remove(item);
+
+            InfoIC.ItemsSource = null;
+            InfoIC.ItemsSource = marmalades;
         }
     }
 }

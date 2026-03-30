@@ -35,7 +35,7 @@
             <TextBlock Text="Пароль" Grid.Row="2"/>
             <PasswordBox x:Name="PassPB" Grid.Row="2" Grid.Column="3"/>
 
-            <CheckBox Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4" Content="Запомнить аккаунт" x:Name="SaveAccChB"/>
+            <CheckBox Visibility="Collapsed" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4" Content="Запомнить аккаунт" x:Name="SaveAccChB"/>
 
             <Button Click="LoginBtn_Click" x:Name="LoginBtn" Grid.Row="6" Grid.ColumnSpan="3" Content="Войти"/>
         

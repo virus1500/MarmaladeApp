@@ -22,11 +22,15 @@ namespace MarmaladeApp.View.Pages
     /// </summary>
     public partial class MarmaladeBoxPage : Page
     {
+        public bool IsAdmin { get; set; }
         List<BoxMarmalade> marmalades = App.context.BoxMarmalade.ToList();
         public MarmaladeBoxPage(User user)
         {
             InitializeComponent();
             InfoIC.ItemsSource = marmalades;
+
+            IsAdmin = user.Role.id == 1;
+            DataContext = this;
 
             FiltrCMB.Items.Insert(0, "Нет");
             FiltrCMB.Items.Insert(1, "Халяль");
@@ -104,6 +108,25 @@ namespace MarmaladeApp.View.Pages
         private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
         {
             InfoIC.ItemsSource = marmalades.Where(u => u.Name.ToLower().Contains(SearchTB.Text.ToLower()));
+        }
+
+        private void DelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            BoxMarmalade item = btn.CommandParameter as BoxMarmalade;
+
+            if (item == null) return;
+
+            // удаляем из БД
+            App.context.BoxMarmalade.Remove(item);
+            App.context.SaveChanges();
+
+            // удаляем из списка
+            marmalades.Remove(item);
+
+            // обновляем UI
+            InfoIC.ItemsSource = null;
+            InfoIC.ItemsSource = marmalades;
         }
     }
 }

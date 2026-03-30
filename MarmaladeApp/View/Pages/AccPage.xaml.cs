@@ -44,7 +44,7 @@ namespace MarmaladeApp.View.Pages
             PassPB.Password = user.Password;
             RepPassPB.Password = user.Password;
 
-            PassTBl.Text = new string('*', PassPB.Password.Length);
+            //PassTBl.Text = new string('*', PassPB.Password.Length);
 
             PassPB.Visibility = Visibility.Collapsed;
             RepPassPB.Visibility = Visibility.Collapsed;

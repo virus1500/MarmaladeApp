@@ -40,15 +40,22 @@
                     <ImageBrush ImageSource="/Roaming/МармеладПингвины.jpg"/>
                 </Border.Background>
             </Border>
-            
-            <TextBlock Text="{Binding Name}" x:Name="MarmaladeNameTB" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Supplier.Name}" x:Name="MarmaladeSupplierTB" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Supplier.Country}" x:Name="MarmaladeSupplierCountryTB" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Cost}" x:Name="MarmaladeCostTB" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Gramm}" x:Name="MarmaladeGrammTB" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Halal}" x:Name="MarmaladeHalalTB" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding Compound}" x:Name="MarmaladeCompoundTB" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
-            <TextBlock Text="{Binding EnergyValue100gKilojoleOrCalories}" x:Name="MarmaladeEnergyTB" Grid.Column="0" Grid.Row="16" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
+            <TextBlock Text="Название:" Grid.Row="2"/>
+            <TextBlock Text="{Binding Name}" x:Name="MarmaladeNameTB" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+            <TextBlock Text="Производитель:" Grid.Row="4"/>
+            <TextBlock Text="{Binding Supplier.Name}" x:Name="MarmaladeSupplierTB" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+            <TextBlock Text="Страна производителя:" TextWrapping="Wrap" Grid.Row="6"/>
+            <TextBlock Text="{Binding Supplier.Country}" x:Name="MarmaladeSupplierCountryTB" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+            <TextBlock Text="Цена:" Grid.Row="8"/>
+            <TextBlock Text="{Binding Cost}" x:Name="MarmaladeCostTB" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+            <TextBlock Text="Грамм:" Grid.Row="10"/>
+            <TextBlock Text="{Binding Gramm }" x:Name="MarmaladeGrammTB" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+            <TextBlock Text="Халяль:" Grid.Row="12"/>
+            <TextBlock Text="{Binding Halal}" x:Name="MarmaladeHalalTB" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+            <TextBlock Text="Состав:" Grid.Row="14"/>
+            <TextBlock Text="{Binding Compound}" x:Name="MarmaladeCompoundTB" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+            <TextBlock Text="Каллорийность:" Grid.Row="16"/>
+            <TextBlock Text="{Binding EnergyValue100gKilojoleOrCalories }" x:Name="MarmaladeEnergyTB" Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
             <Button Content="Закрыть" x:Name="CloseBtn" Click="CloseBtn_Click" Grid.Column="3" Width="100" Grid.Row="18"/>
             <Button Content="Купить" x:Name="BuyBtn" Click="BuyBtn_Click" Grid.Column="0" Width="100" Grid.Row="18"/>
         </Grid>
